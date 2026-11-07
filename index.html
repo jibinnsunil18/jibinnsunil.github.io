@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic & Research Portfolio</title>
+    <title>Jibin Niravathedappallil Sunil | Physics Research Portfolio</title>
     <style>
-        /* Flat Color Palette - No Gradients */
+        /* Flat Color Palette - Zero Gradients, High Contrast */
         :root {
             --bg-color: #0f172a;        /* Solid Dark Slate */
             --card-bg: #1e293b;         /* Solid Dark Blue-Gray */
             --border-color: #334155;    /* Solid Slate Border */
-            --text-main: #f8fafc;       /* Solid White-Off */
+            --text-main: #f8fafc;       /* Solid Off-White */
             --text-muted: #94a3b8;      /* Light Gray */
             --accent-green: #10b981;    /* Flat Emerald Green */
-            --accent-green-hover: #059669;
+            --accent-hover: #059669;
             --badge-bg: #064e3b;        /* Dark Solid Emerald */
             --badge-text: #6ee7b7;
         }
@@ -33,26 +33,45 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
 
+        /* Canvas Background / Hero Header */
         header {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             padding: 40px 30px;
             border-radius: 8px;
             margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #bg-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: var(--text-main);
             margin-bottom: 8px;
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--accent-green);
             font-weight: 600;
             margin-bottom: 16px;
@@ -62,9 +81,22 @@
             color: var(--text-muted);
             font-size: 1rem;
             max-width: 750px;
+            margin-bottom: 20px;
         }
 
-        /* Section Styling */
+        .contact-links a {
+            color: var(--accent-green);
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
         section {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -74,7 +106,7 @@
         }
 
         h2 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--text-main);
             border-bottom: 2px solid var(--accent-green);
             padding-bottom: 8px;
@@ -82,40 +114,12 @@
             display: inline-block;
         }
 
-        /* Publications */
-        .pub-item {
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            border-radius: 6px;
-            margin-bottom: 16px;
-        }
-
-        .pub-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 6px;
-        }
-
-        .pub-authors {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 6px;
-        }
-
-        .pub-journal {
-            color: var(--accent-green);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
         /* Nano-Art Gallery */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 16px;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .gallery-card {
@@ -125,9 +129,15 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            cursor: pointer;
+            transition: border-color 0.2s;
         }
 
-        .gallery-img-container {
+        .gallery-card:hover {
+            border-color: var(--accent-green);
+        }
+
+        .gallery-img-box {
             width: 100%;
             height: 180px;
             background-color: #020617;
@@ -135,12 +145,8 @@
             align-items: center;
             justify-content: center;
             border-bottom: 1px solid var(--border-color);
-        }
-
-        .gallery-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
         .gallery-info {
@@ -170,35 +176,130 @@
             color: var(--text-muted);
         }
 
-        /* Buttons & Links */
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-green);
-            color: #000;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 4px;
-            text-decoration: none;
-            margin-top: 12px;
-            font-size: 0.9rem;
+        /* Publications */
+        .pub-item {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 16px;
         }
 
-        .btn:hover {
-            background-color: var(--accent-green-hover);
-            color: #fff;
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .pub-authors {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .pub-journal {
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Interactive Simulator */
+        .sim-container {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .sim-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .control-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .control-group input {
+            width: 100%;
+            accent-color: var(--accent-green);
+        }
+
+        #sim-canvas {
+            width: 100%;
+            height: 250px;
+            background-color: #020617;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        /* Modal Popup for Images */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.85);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: var(--text-main);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Header / Intro -->
+        <!-- Header with Canvas -->
         <header>
-            <h1>PhD Researcher in Physics</h1>
-            <div class="subtitle">Experimental Condensed Matter & Quantum Transport</div>
-            <p class="bio">
-                Focusing on 2D material heterostructures, cleanroom nanofabrication, scanning probe microscopy, and low-temperature quantum transport phenomena.
-            </p>
+            <canvas id="bg-canvas"></canvas>
+            <div class="header-content">
+                <h1>Jibin Niravathedappallil Sunil</h1>
+                <div class="subtitle">PhD Researcher in Experimental Condensed Matter Physics</div>
+                <p class="bio">
+                    Specializing in 2D material heterostructures, cleanroom nanofabrication, electron-beam lithography, and cryogenic quantum transport measurements.
+                </p>
+                <div class="contact-links">
+                    <a href="#publications">Publications</a>
+                    <a href="#nano-art">Nano-Art Gallery</a>
+                    <a href="#simulator">Transport Simulator</a>
+                    <a href="https://github.com/jibinnsunil" target="_blank">GitHub</a>
+                </div>
+            </div>
         </header>
 
         <!-- Publications Section -->
@@ -206,86 +307,228 @@
             <h2>Selected Publications</h2>
 
             <div class="pub-item">
-                <div class="pub-title">Quantum Transport & Electronic Properties in 2D Heterostructures</div>
-                <div class="pub-authors">Co-author A, Co-author B, <strong>Your Name</strong>, Lead Author</div>
-                <div class="pub-journal">Physical Review B (2026)</div>
+                <div class="pub-title">Quantum Transport & Electronic Properties in Encapsulated 2D Heterostructures</div>
+                <div class="pub-authors">Collaborators, <strong>Jibin N. S.</strong>, et al.</div>
+                <span class="pub-journal">Physical Review B / Applied Physics (2026)</span>
             </div>
 
             <div class="pub-item">
-                <div class="pub-title">High-Mobility Encapsulated TMD Devices via Polymer Stacking</div>
-                <div class="pub-authors">Lead Author, Co-author B, <strong>Your Name</strong> (3rd Author), et al.</div>
-                <div class="pub-journal">ACS Nano / Applied Physics Letters (2025)</div>
+                <div class="pub-title">High-Mobility TMD Devices via Polymer Stacking and Advanced Lithography</div>
+                <div class="pub-authors">Lead Author, <strong>Jibin N. S.</strong> (3rd Author), et al.</div>
+                <span class="pub-journal">ACS Nano / Applied Materials (2025)</span>
             </div>
         </section>
 
-        <!-- Nanoscale Photography Section -->
+        <!-- Nanoscale Photography Section (5 Winning Images) -->
         <section id="nano-art">
             <h2>Nanoscale Photography & Art</h2>
-            <p class="bio" style="margin-bottom: 20px;">
-                Award-winning electron microscopy (SEM/AFM) captures bridging nanoscale cleanroom physics and microscopic aesthetics.
+            <p class="bio">
+                Capturing the intricate beauty of cleanroom fabrication, polymer residues, and microstructures. Winner of three nanoimage competitions. Click any card to inspect.
             </p>
 
             <div class="gallery-grid">
-                <!-- Image 1 -->
-                <div class="gallery-card">
-                    <div class="gallery-img-container">
-                        <img src="https://via.placeholder.com/400x300/020617/10b981?text=Silicon+Shores+(Award+Winner)" alt="Silicon Shores">
-                    </div>
+                <div class="gallery-card" onclick="openModal('Silicon Shores', 'First Prize Winner. False-color electron micrograph showing polymer residue patterns on a silicon substrate.')">
+                    <div class="gallery-img-box">[ Image 1: Silicon Shores ]</div>
                     <div class="gallery-info">
                         <span class="award-badge">1st Prize Winner</span>
                         <div class="gallery-title">Silicon Shores</div>
-                        <div class="gallery-desc">Polymer residue patterns on a silicon chip captured via false-color SEM.</div>
+                        <div class="gallery-desc">Polymer residue & lithography textures.</div>
                     </div>
                 </div>
 
-                <!-- Image 2 -->
-                <div class="gallery-card">
-                    <div class="gallery-img-container">
-                        <img src="https://via.placeholder.com/400x300/020617/10b981?text=Nano+Photo+2+(Award+Winner)" alt="Nano Image 2">
-                    </div>
+                <div class="gallery-card" onclick="openModal('Lattice Horizons', 'Prize Winner. Atomic Force Microscopy (AFM) scan of layered 2D flakes.')">
+                    <div class="gallery-img-box">[ Image 2: Lattice Horizons ]</div>
                     <div class="gallery-info">
                         <span class="award-badge">Prize Winner</span>
                         <div class="gallery-title">Lattice Horizons</div>
-                        <div class="gallery-desc">Atomic force microscopy profile of high-quality 2D crystal flakes.</div>
+                        <div class="gallery-desc">AFM topography of 2D atomic layers.</div>
                     </div>
                 </div>
 
-                <!-- Image 3 -->
-                <div class="gallery-card">
-                    <div class="gallery-img-container">
-                        <img src="https://via.placeholder.com/400x300/020617/10b981?text=Nano+Photo+3+(Award+Winner)" alt="Nano Image 3">
-                    </div>
+                <div class="gallery-card" onclick="openModal('Quantum Contacts', 'Prize Winner. High-resolution electron beam image of metallic contact arrays.')">
+                    <div class="gallery-img-box">[ Image 3: Quantum Contacts ]</div>
                     <div class="gallery-info">
                         <span class="award-badge">Prize Winner</span>
                         <div class="gallery-title">Quantum Contacts</div>
-                        <div class="gallery-desc">E-beam lithography written metallic contacts imaged under electron beam.</div>
+                        <div class="gallery-desc">E-beam written metallic leads.</div>
                     </div>
                 </div>
 
-                <!-- Image 4 -->
-                <div class="gallery-card">
-                    <div class="gallery-img-container">
-                        <img src="https://via.placeholder.com/400x300/020617/10b981?text=Nano+Photo+4" alt="Nano Image 4">
-                    </div>
+                <div class="gallery-card" onclick="openModal('Etch Frontiers', 'Reactive Ion Etching sidewall profiles across hBN dielectric layers.')">
+                    <div class="gallery-img-box">[ Image 4: Etch Frontiers ]</div>
                     <div class="gallery-info">
                         <div class="gallery-title">Etch Frontiers</div>
-                        <div class="gallery-desc">Reactive ion etching sidewalls across hBN layers.</div>
+                        <div class="gallery-desc">Anisotropic plasma etching structures.</div>
                     </div>
                 </div>
 
-                <!-- Image 5 -->
-                <div class="gallery-card">
-                    <div class="gallery-img-container">
-                        <img src="https://via.placeholder.com/400x300/020617/10b981?text=Nano+Photo+5" alt="Nano Image 5">
-                    </div>
+                <div class="gallery-card" onclick="openModal('Moiré Waves', 'Interference fringe patterns emerging in twisted transition metal dichalcogenides.')">
+                    <div class="gallery-img-box">[ Image 5: Moiré Waves ]</div>
                     <div class="gallery-info">
-                        <div class="gallery-title">Superlattice Waves</div>
-                        <div class="gallery-desc">Moiré patterns emerging under high-resolution imaging.</div>
+                        <div class="gallery-title">Moiré Waves</div>
+                        <div class="gallery-desc">Twisted heterostructure superlattices.</div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Interactive Quantum Transport Gate Sweep Simulator -->
+        <section id="simulator">
+            <h2>Interactive Gate Sweep Simulator</h2>
+            <p class="bio">
+                Simulate drain current ($I_{\text{ds}}$) vs. back-gate voltage ($V_{\text{g}}$) characteristics in a field-effect transistor based on 2D semiconductor channels.
+            </p>
+
+            <div class="sim-container">
+                <div class="sim-controls">
+                    <div class="control-group">
+                        <label id="vg-label">Gate Voltage (V): <span id="vg-val">0.0</span> V</label>
+                        <input type="range" id="vg-slider" min="-10" max="10" step="0.1" value="0" oninput="updateSim()">
+                    </div>
+                    <div class="control-group">
+                        <label id="temp-label">Temperature: <span id="temp-val">1.5</span> K</label>
+                        <input type="range" id="temp-slider" min="1.5" max="300" step="1" value="1.5" oninput="updateSim()">
+                    </div>
+                </div>
+                <canvas id="sim-canvas"></canvas>
             </div>
         </section>
     </div>
 
+    <!-- Modal Popup Window -->
+    <div id="artModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModalDirect()">&times;</span>
+            <h3 id="modal-title" style="margin-bottom: 10px; color: var(--accent-green);"></h3>
+            <p id="modal-desc" style="color: var(--text-muted);"></p>
+        </div>
+    </div>
+
+    <script>
+        /* Background Canvas Lattice Animation */
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resize() {
+            width = canvas.width = canvas.parentElement.offsetWidth;
+            height = canvas.height = canvas.parentElement.offsetHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        for (let i = 0; i < 35; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4
+            });
+        }
+
+        function animateBg() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = '#10b981';
+            ctx.strokeStyle = '#334155';
+            
+            particles.forEach((p, index) => {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0 || p.x > width) p.vx *= -1;
+                if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+                ctx.fill();
+
+                for (let j = index + 1; j < particles.length; j++) {
+                    let p2 = particles[j];
+                    let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 100) {
+                        ctx.lineWidth = 1 - (dist / 100);
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animateBg);
+        }
+        animateBg();
+
+        /* Modal Logic */
+        function openModal(title, desc) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('artModal').style.display = 'flex';
+        }
+        function closeModalDirect() {
+            document.getElementById('artModal').style.display = 'none';
+        }
+        function closeModal(e) {
+            if (e.target.id === 'artModal') closeModalDirect();
+        }
+
+        /* Gate Sweep Simulator Logic */
+        const simCanvas = document.getElementById('sim-canvas');
+        const simCtx = simCanvas.getContext('2d');
+
+        function updateSim() {
+            let vg = parseFloat(document.getElementById('vg-slider').value);
+            let temp = parseFloat(document.getElementById('temp-slider').value);
+
+            document.getElementById('vg-val').innerText = vg.toFixed(1);
+            document.getElementById('temp-val').innerText = temp.toFixed(0);
+
+            let swWidth = simCanvas.width = simCanvas.offsetWidth;
+            let swHeight = simCanvas.height = simCanvas.offsetHeight;
+
+            simCtx.clearRect(0, 0, swWidth, swHeight);
+
+            // Draw axes
+            simCtx.strokeStyle = '#334155';
+            simCtx.lineWidth = 1;
+            simCtx.beginPath();
+            simCtx.moveTo(40, swHeight - 30);
+            simCtx.lineTo(swWidth - 20, swHeight - 30);
+            simCtx.moveTo(40, 20);
+            simCtx.lineTo(40, swHeight - 30);
+            simCtx.stroke();
+
+            // Plot curve (Simulated Transfer Curve)
+            simCtx.strokeStyle = '#10b981';
+            simCtx.lineWidth = 2;
+            simCtx.beginPath();
+
+            for (let x = 0; x < swWidth - 60; x++) {
+                let vVal = -10 + (x / (swWidth - 80)) * 20;
+                // Thermal broadening approx via temperature
+                let threshold = 1.0;
+                let current = 10 * (1 / (1 + Math.exp(-(vVal - threshold) / (0.5 + temp * 0.005))));
+                
+                let px = 40 + x;
+                let py = (swHeight - 30) - (current / 10) * (swHeight - 60);
+
+                if (x === 0) simCtx.moveTo(px, py);
+                else simCtx.lineTo(px, py);
+            }
+            simCtx.stroke();
+
+            // Highlight current operating point
+            let markerX = 40 + ((vg + 10) / 20) * (swWidth - 60);
+            let markerCurr = 10 * (1 / (1 + Math.exp(-(vg - 1.0) / (0.5 + temp * 0.005))));
+            let markerY = (swHeight - 30) - (markerCurr / 10) * (swHeight - 60);
+
+            simCtx.fillStyle = '#f8fafc';
+            simCtx.beginPath();
+            simCtx.arc(markerX, markerY, 5, 0, Math.PI * 2);
+            simCtx.fill();
+        }
+
+        window.addEventListener('resize', updateSim);
+        updateSim();
+    </script>
 </body>
 </html>
