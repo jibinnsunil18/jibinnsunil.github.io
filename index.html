@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic & Research Portfolio</title>
+    <style>
+        /* Flat Color Palette - No Gradients */
+        :root {
+            --bg-color: #0f172a;        /* Solid Dark Slate */
+            --card-bg: #1e293b;         /* Solid Dark Blue-Gray */
+            --border-color: #334155;    /* Solid Slate Border */
+            --text-main: #f8fafc;       /* Solid White-Off */
+            --text-muted: #94a3b8;      /* Light Gray */
+            --accent-green: #10b981;    /* Flat Emerald Green */
+            --accent-green-hover: #059669;
+            --badge-bg: #064e3b;        /* Dark Solid Emerald */
+            --badge-text: #6ee7b7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 40px 30px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .bio {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 750px;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--accent-green);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        /* Publications */
+        .pub-item {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .pub-authors {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .pub-journal {
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Nano-Art Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .gallery-card {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-img-container {
+            width: 100%;
+            height: 180px;
+            background-color: #020617;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .gallery-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-info {
+            padding: 16px;
+        }
+
+        .award-badge {
+            display: inline-block;
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .gallery-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .gallery-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Buttons & Links */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-green);
+            color: #000;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 12px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-green-hover);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Intro -->
+        <header>
+            <h1>PhD Researcher in Physics</h1>
+            <div class="subtitle">Experimental Condensed Matter & Quantum Transport</div>
+            <p class="bio">
+                Focusing on 2D material heterostructures, cleanroom nanofabrication, scanning probe microscopy, and low-temperature quantum transport phenomena.
+            </p>
+        </header>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Selected Publications</h2>
+
+            <div class="pub-item">
+                <div class="pub-title">Quantum Transport & Electronic Properties in 2D Heterostructures</div>
+                <div class="pub-authors">Co-author A, Co-author B, <strong>Your Name</strong>, Lead Author</div>
+                <div class="pub-journal">Physical Review B (2026)</div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">High-Mobility Encapsulated TMD Devices via Polymer Stacking</div>
+                <div class="pub-authors">Lead Author, Co-author B, <strong>Your Name</strong> (3rd Author), et al.</div>
+                <div class="pub-journal">ACS Nano / Applied Physics Letters (2025)</div>
+            </div>
+        </section>
+
+        <!-- Nanoscale Photography Section -->
+        <section id="nano-art">
+            <h2>Nanoscale Photography & Art</h2>
+            <p class="bio" style="margin-bottom: 20px;">
+                Award-winning electron microscopy (SEM/AFM) captures bridging nanoscale cleanroom physics and microscopic aesthetics.
+            </p>
+
+            <div class="gallery-grid">
+                <!-- Image 1 -->
+                <div class="gallery-card">
+                    <div class="gallery-img-container">
+                        <img src="https://via.placeholder.com/400x300/020617/10b981?text=Silicon+Shores+(Award+Winner)" alt="Silicon Shores">
+                    </div>
+                    <div class="gallery-info">
+                        <span class="award-badge">1st Prize Winner</span>
+                        <div class="gallery-title">Silicon Shores</div>
+                        <div class="gallery-desc">Polymer residue patterns on a silicon chip captured via false-color SEM.</div>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="gallery-card">
+                    <div class="gallery-img-container">
+                        <img src="https://via.placeholder.com/400x300/020617/10b981?text=Nano+Photo+2+(Award+Winner)" alt="Nano Image 2">
+                    </div>
+                    <div class="gallery-info">
+                        <span class="award-badge">Prize Winner</span>
+                        <div class="gallery-title">Lattice Horizons</div>
+                        <div class="gallery-desc">Atomic force microscopy profile of high-quality 2D crystal flakes.</div>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="gallery-card">
+                    <div class="gallery-img-container">
+                        <img src="https://via.placeholder.com/400x300/020617/10b981?text=Nano+Photo+3+(Award+Winner)" alt="Nano Image 3">
+                    </div>
+                    <div class="gallery-info">
+                        <span class="award-badge">Prize Winner</span>
+                        <div class="gallery-title">Quantum Contacts</div>
+                        <div class="gallery-desc">E-beam lithography written metallic contacts imaged under electron beam.</div>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="gallery-card">
+                    <div class="gallery-img-container">
+                        <img src="https://via.placeholder.com/400x300/020617/10b981?text=Nano+Photo+4" alt="Nano Image 4">
+                    </div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">Etch Frontiers</div>
+                        <div class="gallery-desc">Reactive ion etching sidewalls across hBN layers.</div>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="gallery-card">
+                    <div class="gallery-img-container">
+                        <img src="https://via.placeholder.com/400x300/020617/10b981?text=Nano+Photo+5" alt="Nano Image 5">
+                    </div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">Superlattice Waves</div>
+                        <div class="gallery-desc">Moiré patterns emerging under high-resolution imaging.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
